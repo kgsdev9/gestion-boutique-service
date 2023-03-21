@@ -1,0 +1,62 @@
+<?php
+
+return [
+
+	/******* Listing Template *******/
+    'title' => 'Quotes',
+    'add' => 'Add Quote',
+    'list' => 'Quotes List',
+    'changes_success' => 'Changes have been successfuly made',
+    'filter' => 'Filter by Supplier Name',
+    'client' => 'Client',
+    'price' => 'Price',
+    'download_pdf' => 'Download PDF',
+    'edit' => 'Edit',
+
+    /******* Single Template *******/
+    'quote' => 'Quote',
+    'profession' => 'Profession',
+    'professions' => 'Professions',
+    'quantity' => 'Quantity',
+    'choose' => 'Choose...',
+    'time' => 'Time',
+    'overtime' => 'Overtime',
+    'fees' => 'Fees',
+    'remove' => 'Remove',
+    'equipment' => 'Equipment',
+    'material' => 'Material',
+    'materials' => 'Materials',
+    'delete_entry_confirmation' => 'Are you sure you want to delete this entry?',
+    'information' => 'Quote Information',
+    'date' => 'Date',
+    'add' => 'Add',
+    'generate' => 'Generate Quote',
+    'delete' => 'delete',
+    'delete_confirmation' => 'Are you sure you want to delete this quote?',
+    'overprice' => 'Overprice',
+    'discount' => 'Discount',
+    'subtotal' => 'Subtotal',
+    'others' => 'Others',
+    'summary' => 'Summary',
+    'grand_total' => 'Grand Total',
+    'signature' => 'Signature',
+    'comment' => 'Comment',
+    'image' => 'Image',
+    'clear' => 'Clear',
+    'images' => 'Images',
+
+    /******* Print *******/
+    'total' => 'Total',
+    'labour' => 'Labour',
+    'hourly_price' => 'Hourly Price',
+    'labour_total' => 'Labour Total',
+    'quantity_short' => 'Qty',
+    'duration' => 'Duration',
+    'equipment_total' => 'Equipment Total',
+    'name' => 'Name',
+    'materials' => 'Materials',
+    'materials_total' => 'Materials Total',
+    'quote_total' => 'Quote Total',
+    'other_total' => 'Other Total',
+
+];

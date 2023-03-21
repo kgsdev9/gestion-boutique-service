@@ -1,202 +1,153 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+<title>GESTION DE FACTURE </title>
 
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="shortcut icon" href="assets/img/favicon.png">
 
-    <!-- Meta -->
-    <meta name="description" content="">
-    <meta name="author" content="Themepixels">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{asset('assets/plugins/bootstrap/css/bootstrap.min.css')}}">
+<link rel="stylesheet" href="{{asset('assets/plugins/feather/feather.css')}}">
+<link rel="stylesheet" href="{{asset('assets/plugins/icons/flags/flags.css')}}">
+<link rel="stylesheet" href="{{asset('assets/plugins/fontawesome/css/fontawesome.min.css')}}">
+<link rel="stylesheet" href="{{asset('assets/plugins/fontawesome/css/all.min.css')}}">
+<link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+@livewireStyles
+</head>
+<body>
 
-    <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="../assets/img/favicon.png">
+<div class="main-wrapper">
 
-    <title>Gestion Application </title>
+<div class="header">
 
-    <!-- Vendor CSS --> 
+<div class="header-left">
+<h5>FACTURE</h5>
+<a href="index.html" class="logo logo-small">
+    FACURE
+</a>
+</div>
+
+<div class="menu-toggle">
+<a href="javascript:void(0);" id="toggle_btn">
+<i class="fas fa-bars"></i>
+</a>
+</div>
+
+<div class="top-nav-search">
+<form>
+<input type="text" class="form-control" placeholder="Search here">
+<button class="btn" type="submit"><i class="fas fa-search"></i></button>
+</form>
+</div>
 
 
-    <link rel="stylesheet" href="{{asset('lib/remixicon/fonts/remixicon.css')}}">
-    <link rel="stylesheet" href="{{asset('lib/jqvmap/jqvmap.min.css')}}">
-       <link rel="stylesheet" href="{{asset('assets/css/style.min.css')}}"> 
+<a class="mobile_btn" id="mobile_btn">
+<i class="fas fa-bars"></i>
+</a>
 
 
-       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
-        @livewireStyles
-  </head>
-  <body >
-
-    <div class="sidebar">
-      <div class="sidebar-header">
-        <a href="../" class="sidebar-logo">GESTION APPS</a>
-      </div><!-- sidebar-header -->
-      <div id="sidebarMenu" class="sidebar-body">
-        <div class="nav-group show">
-          <a href="#" class="nav-label">Tableau de bord </a>
-          <ul class="nav nav-sidebar">
-            <li class="nav-item">
-              <a href="{{route('gestion.client')}}" class="nav-link"><i class="ri-pie-chart-2-line"></i> <span>Gestion de client </span></a>
-            </li>
-            <li class="nav-item">
-              <a href="{{route('categorie.gestion')}}" class="nav-link"><i class="ri-calendar-todo-line"></i> <span>Gestion des catégories</span></a>
-            </li>
-            <li class="nav-item">
-              <a href="{{route('product.gestion')}}" class="nav-link"><i class="ri-shopping-bag-3-line"></i> <span>Gestion de produit </span></a>
-            </li>
-            <li class="nav-item">
-              <a href="../dashboard/analytics.html" class="nav-link active"><i class="ri-bar-chart-2-fill"></i> <span>Gestion de commande </span></a>
-            </li>
-            <li class="nav-item">
-              <a href="{{URl('/users')}}" class="nav-link"><i class="ri-coin-line"></i> <span>Gestion d'utilisateur </span></a>
-            </li>
-          </ul>
-        </div><!-- nav-group -->
-    
-      
-     
-      </div><!-- sidebar-body -->
-      <div class="sidebar-footer">
-        <div class="sidebar-footer-top">
-          <div class="sidebar-footer-thumb">
-            <img src="https://via.placeholder.com/500/4c5366/fff" alt="">
-          </div><!-- sidebar-footer-thumb -->
-          <div class="sidebar-footer-body">
-            <h6><a href="../pages/profile.html">Shaira Diaz</a></h6>
-            <p>Premium Member</p>
-          </div><!-- sidebar-footer-body -->
-          <a id="sidebarFooterMenu" href="" class="dropdown-link"><i class="ri-arrow-down-s-line"></i></a>
-        </div><!-- sidebar-footer-top -->
-        <div class="sidebar-footer-menu">
-          <nav class="nav">
-            <a href=""><i class="ri-edit-2-line"></i> Edit Profile</a>
-            <a href=""><i class="ri-profile-line"></i> View Profile</a>
-          </nav>
-          <hr>
-          <nav class="nav">
-            <a href=""><i class="ri-question-line"></i> Help Center</a>
-            <a href=""><i class="ri-lock-line"></i> Privacy Settings</a>
-            <a href=""><i class="ri-user-settings-line"></i> Account Settings</a>
-            <a href=""><i class="ri-logout-box-r-line"></i> Log Out</a>
-          </nav>
-        </div><!-- sidebar-footer-menu -->
-      </div><!-- sidebar-footer -->
-    </div><!-- sidebar -->
-
-    <div class="header-main px-3 px-lg-4">
-      <a id="menuSidebar" href="#" class="menu-link me-3 me-lg-4"><i class="ri-menu-2-fill"></i></a>
-
-      <div class="form-search me-auto">
-        <input type="text" class="form-control" placeholder="Search">
-        <i class="ri-search-line"></i>
-      </div><!-- form-search -->
-
-      <div class="dropdown dropdown-skin">
-        <a href="" class="dropdown-link" data-bs-toggle="dropdown" data-bs-auto-close="outside"><i class="ri-settings-3-line"></i></a>
-        <div class="dropdown-menu dropdown-menu-end mt-10-f">
-          <label>Skin Mode</label>
-          <nav id="skinMode" class="nav nav-skin">
-            <a href="" class="nav-link active">Light</a>
-            <a href="" class="nav-link">Dark</a>
-          </nav>
-          <hr>
-          <label>Sidebar Skin</label>
-          <nav id="sidebarSkin" class="nav nav-skin">
-            <a href="" class="nav-link active">Default</a>
-            <a href="" class="nav-link">Prime</a>
-            <a href="" class="nav-link">Dark</a>
-          </nav>
-        </div><!-- dropdown-menu -->
-      </div><!-- dropdown -->
-
-      <div class="dropdown dropdown-notification ms-3 ms-xl-4">
-        <a href="" class="dropdown-link" data-bs-toggle="dropdown" data-bs-auto-close="outside"><small>3</small><i class="ri-notification-3-line"></i></a>
-        <div class="dropdown-menu dropdown-menu-end mt-10-f me--10-f">
-          <div class="dropdown-menu-header">
-            <h6 class="dropdown-menu-title">Notifications</h6>
-          </div><!-- dropdown-menu-header -->
-          <ul class="list-group">
-            <li class="list-group-item">
-              <div class="avatar online"><img src="https://via.placeholder.com/300/4c5366/fff" alt=""></div>
-              <div class="list-group-body">
-                <p><strong>Dominador Manuel</strong> and <strong>100 other people</strong> reacted to your comment "Tell your partner that...</p>
-                <span>Aug 20 08:55am</span>
-              </div><!-- list-group-body -->
-            </li>
-            <li class="list-group-item">
-              <div class="avatar online"><img src="https://via.placeholder.com/300/4c5366/fff" alt=""></div>
-              <div class="list-group-body">
-                <p><strong>Angela Ighot</strong> tagged you and <strong>9 others</strong> in a post.</p>
-                <span>Aug 18 10:30am</span>
-              </div><!-- list-group-body -->
-            </li>
-            <li class="list-group-item">
-              <div class="avatar"><span class="avatar-initial bg-primary">a</span></div>
-              <div class="list-group-body">
-                <p>New listings were added that match your search alert <strong>house for rent</strong></p>
-                <span>Aug 15 08:10pm</span>
-              </div><!-- list-group-body -->
-            </li>
-            <li class="list-group-item">
-              <div class="avatar online"><img src="https://via.placeholder.com/300/4c5366/fff" alt=""></div>
-              <div class="list-group-body">
-                <p>Reminder: <strong>Jerry Cuares</strong> invited you to like <strong>Cuares Surveying Services</strong>. <br><a href="">Accept</a> or <a href="">Decline</a></p>
-                <span>Aug 14 11:50pm</span>
-              </div><!-- list-group-body -->
-            </li>
-            <li class="list-group-item">
-              <div class="avatar online"><img src="https://via.placeholder.com/300/4c5366/fff" alt=""></div>
-              <div class="list-group-body">
-                <p><strong>Dyanne Aceron</strong> reacted to your post <strong>King of the Bed</strong>.</p>
-                <span>Aug 10 05:30am</span>
-              </div><!-- list-group-body -->
-            </li>
-          </ul>
-          <div class="dropdown-menu-footer"><a href="">Show all Notifications</a></div>
-        </div><!-- dropdown-menu -->
-      </div><!-- dropdown -->
-      <div class="dropdown dropdown-profile ms-3 ms-xl-4">
-          <a href="" class="dropdown-link" data-bs-toggle="dropdown" data-bs-auto-close="outside"><div class="avatar online"><img src="https://via.placeholder.com/500/4c5366/fff" alt=""></div></a>
-          <div class="dropdown-menu dropdown-menu-end mt-10-f">
-            <div class="dropdown-menu-body">
-              <div class="avatar avatar-xl online mb-3"><img src="https://via.placeholder.com/500/4c5366/fff" alt=""></div>
-              <h5 class="mb-1 text-dark fw-semibold">Shaira Diaz</h5>
-              <p class="fs-sm text-secondary">Premium Member</p>
-
-              <nav class="nav">
-                <a href=""><i class="ri-edit-2-line"></i> Edit Profile</a>
-                <a href=""><i class="ri-profile-line"></i> View Profile</a>
-              </nav>
-              <hr>
-              <nav class="nav">
-                <a href=""><i class="ri-question-line"></i> Help Center</a>
-                <a href=""><i class="ri-lock-line"></i> Privacy Settings</a>
-                <a href=""><i class="ri-user-settings-line"></i> Account Settings</a>
-                <a href=""><i class="ri-logout-box-r-line"></i> Log Out</a>
-              </nav>
-            </div><!-- dropdown-menu-body -->
-          </div><!-- dropdown-menu -->
-      </div><!-- dropdown -->
-    </div><!-- header-main -->
+<ul class="nav user-menu">
 
 
 
 
-    @yield('content')
+<li class="nav-item zoom-screen me-2">
+<a href="#" class="nav-link header-nav-list win-maximize">
+<img src="assets/img/icons/header-icon-04.svg" alt="">
+</a>
+</li>
+
+<li class="nav-item dropdown has-arrow new-user-menus">
+<a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
+<span class="user-img">
+
+<div class="user-text">
+<h6>FACTURE  </h6>
+<p class="text-muted mb-0">Administrator</p>
+</div>
+</span>
+</a>
+<div class="dropdown-menu">
+<a class="dropdown-item" href="#">Se Deconnecter</a>
+</div>
+</li>
+
+</ul>
+
+</div>
+
+<div class="sidebar" id="sidebar">
+<div class="sidebar-inner slimscroll">
+<div id="sidebar-menu" class="sidebar-menu">
+<ul>
+<li class="menu-title">
+<span>Tableau de bord </span>
+</li>
+<li>
+    <a href="{{URL('/')}}"><i class="fas fa-calendar-day"></i> <span>Accueil</span></a>
+    </li>
+<li class="submenu">
+<a href="#"> <i class="fas fa-clipboard"></i> <span> Gestion de commande </span> <span class="menu-arrow"></span></a>
+<ul>
+<li><a href="{{route('form.commande')}}">Nouvelle Commande </a></li>
+<li><a href="{{route('gestion.commande')}}">Liste des commandes </a></li>
+
+</ul>
+</li>
+<li >
+<a href="{{URL('/users')}}"><i class="fas fa-chalkboard-teacher"></i> <span> Gestion d'utilisteur</span> </a>
+</li>
+
+<li>
+    <a href="{{route('sommaire.rapport')}}"><i class="fas fa-baseball-ball"></i> <span>
+
+        Rapports
+    </span></a>
+    </li>
+
+</ul>
+</div>
+</div>
+</div>
+
+
+
+
+<div class="page-wrapper">
+@yield('content')
+
+
+
+
+<div class="col-xl-6 d-flex">
+
+
+</div>
+
+
+
+<footer>
+<p>APPLICATION DE FACTURE </p>
+</footer>
+
+</div>
+
+</div>
+
+
+<script src="{{asset('assets/js/jquery-3.6.0.min.js')}}"></script>
+<script src="{{asset('assets/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{asset('assets/js/feather.min.js')}}"></script>
+<script src="{{asset('assets/plugins/slimscroll/jquery.slimscroll.min.js')}}"></script>
+<script src="{{asset('assets/plugins/apexchart/apexcharts.min.js')}}"></script>
+<script src="{{asset('assets/plugins/apexchart/chart-data.js')}}"></script>
+<script src="{{asset('assets/js/script.js')}}"></script>
 @livewireScripts
-    <script src="{{asset('lib/jquery/jquery.min.js')}}"></script>
-    <script src="{{asset('lib/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-    <script src="{{asset('lib/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
-    <script src="{{asset('lib/jquery.flot/jquery.flot.js')}}"></script>
-    <script src="{{asset('lib/jquery.flot/jquery.flot.stack.js')}}"></script>
-    <script src="{{asset('lib/jquery.flot/jquery.flot.resize.js')}}"></script>
-    <script src="{{asset('lib/jqvmap/jquery.vmap.min.js')}}"></script>
-    <script src="{{asset('lib/jqvmap/maps/jquery.vmap.world.js')}}"></script>
-    <script src="{{asset('assets/js/script.js')}}"></script>
-   <script src="{{asset('assets/js/db.data.js')}}"></script>
-       <script src="{{asset('assets/js/db.analytics.js')}}"></script>
+@include('sweetalert::alert')
 
-  </body>
+
+</body>
 </html>

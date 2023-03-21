@@ -13,9 +13,18 @@ return new class extends Migration
     {
         Schema::create('commandes', function (Blueprint $table) {
             $table->id();
-            $table->string('description');
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->string('numero');
+            $table->date('date');
+            $table->string('entreprise');
+            $table->text('emplacement');
+            $table->text('reference');
+            $table->integer('telephone_one');
+            $table->integer('telephone_two');
+            $table->integer('prix');
+            $table->integer('quantite');
+            $table->integer('total');
+            $table->string('email');
+            $table->string('logo')->nullable();
             $table->timestamps();
         });
     }

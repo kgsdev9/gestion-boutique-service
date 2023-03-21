@@ -12,7 +12,7 @@
 
 <div class="container">
   <h2>Liste des clients </h2>
-     
+
   <table class="table table-bordered">
     <thead>
       <tr>
@@ -30,10 +30,10 @@
         <td>{{ $value->prenom}}</td>
         <td>{{ $value->email}}</td>
           <td>{{ $value->adresse}}</td>
-            <td>{{ $value->created_at->diffForHumans()}}</td>
+            <td>{{   $value->created_at->diffForHumans()}}</td>
       </tr>
     @endforeach
-    
+
     </tbody>
   </table>
 </div>
