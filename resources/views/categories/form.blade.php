@@ -23,6 +23,7 @@
                                         </div>
                                     </div>
 
+                                    @if(!$image)
                                     <div class="col-md-6">
                                         <div class="mb-3">
                                             <label class="form-label" >Image   @error('image') <span class="text-danger">{{ $message }}</span> @enderror</label>
@@ -30,6 +31,14 @@
                                             <input type="file" class="form-control" wire:model="image">
                                         </div>
                                     </div>
+                                    @else
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label class="form-label" > Uploader une nouvelle image  @error('new_image') <span class="text-danger">{{ $message }}</span> @enderror</label>
+                                            <input type="file" class="form-control" wire:model="new_image">
+                                        </div>
+                                    </div>
+                                    @endif
                                 </div>
                                 <div class="mt-4">
                                     <div class="hstack gap-3">
@@ -40,15 +49,6 @@
                                         @endif
                                         <div class="vr"></div>
                                         <button type="button" wire:click="cancelCreate" class="btn btn-outline-danger">Retourner</button>
-
-
-                                        <div class="col-lg-2">
-                                            <div class="col-md-6">
-                                                @if ($image)
-                                                <img class="img-thumbnail" alt="200x200" width="200" src="{{ $image->temporaryUrl() }}" data-holder-rendered="true">
-                                                @endif
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </form>

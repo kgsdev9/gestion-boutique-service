@@ -20,6 +20,7 @@ trait CatagoryService
     public $dynamique_paginate =10 ;
 
     public $image;
+    public $new_image ;
     public $slug;
     public $total_produit;
     public $nom ;
@@ -33,12 +34,18 @@ trait CatagoryService
     }
 
 
+    public function updatingSearch() {
+
+        $this->resetPage();
+    }
+
     protected function rules()
     {
         return [
             'nom' => 'required|min:6|max:255|unique:marques,nom,' . $this->marqueId,
-            'image' => 'required|image',
+            'image' => 'nullable',
             'total_produit' => 'required|integer',
+            'new_image' => 'nullable'
         ];
     }
 
@@ -90,22 +97,17 @@ trait CatagoryService
     public function update()
     {
         $this->validate();
-
          $marque = Marque::findOrFail($this->marqueId);
 
-        $photo = $marque->image;
+        if($this->new_image) {
+            $photo = $marque->image;
+            Storage::delete($marque->image);
+            $photo = $this->new_image->store('public/marques');
+        } else {
 
+            $photo = $marque->image;
 
-
-
-            if($this->image)
-            {
-
-                Storage::delete($marque->image);
-                $photo = $this->image->store('public/marques');
-            }else{
-                $photo = $marque->image;
-            }
+        }
 
             $marque->update([
                 'nom' => $this->nom,
