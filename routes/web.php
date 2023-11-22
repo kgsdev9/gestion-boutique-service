@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\GestionCommande;
 use App\Http\Controllers\TestController;
 use App\Http\Livewire\GestionUserComponent;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\Rapport\RapportController;
 use App\Http\Controllers\Commande\CommandeController;
@@ -57,3 +58,9 @@ Route::get('/detail/test', [TestController::class, 'detail_commande']);
 
 
 Route::get('/commande/show/{id}', [TestController::class, 'show'])->name('commande.test');
+
+
+//mes nouvelles routes
+
+
+Route::get('/annuaire-categories', CategoryController::class)->name('annuaire.categories');
