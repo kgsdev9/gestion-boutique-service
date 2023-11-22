@@ -5,19 +5,22 @@
     <head>
 
         <meta charset="utf-8" />
-        <title>Digital Connect ou Agence  + </title>
+        <title>Digital Agence +</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta content="KGS INFORMATIQUE" name="description" />
+        <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
         <meta content="Themesdesign" name="author" />
         <!-- App favicon -->
         <link rel="shortcut icon" href="assets/images/favicon.ico">
 
         <!-- Bootstrap Css -->
-        <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
+        <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
         <!-- Icons Css -->
-        <link rel="stylesheet" href="{{asset('assets/css/icons.min.css')}}">
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
         <!-- App Css-->
-        <link rel="stylesheet" href="{{asset('assets/css/app.min.css')}}">
+
+        <link rel="stylesheet"  id="app-style" href="{{asset('assets/css/app.min.css')}}">
+
+
         @livewireStyles
     </head>
 

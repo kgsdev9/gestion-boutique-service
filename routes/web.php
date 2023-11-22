@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\GestionCommande;
 use App\Http\Controllers\TestController;
@@ -9,6 +10,7 @@ use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\Rapport\RapportController;
 use App\Http\Controllers\Commande\CommandeController;
 use App\Http\Controllers\Impression\ImpressionController;
+use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -64,3 +66,6 @@ Route::get('/commande/show/{id}', [TestController::class, 'show'])->name('comman
 
 
 Route::get('/annuaire-categories', CategoryController::class)->name('annuaire.categories');
+Route::get('/annuaire-article',ArticleController::class)->name('annuaire.articles');
+Route::get('/annuaire-commandes', OrderController::class)->name('annuaires.commande');
+

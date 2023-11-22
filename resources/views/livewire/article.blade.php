@@ -6,14 +6,14 @@
 					<div class="col-md-6">
 						<div class="mb-3">
 							<h5 class="card-title">
-								liste des catégories
+								liste des articles
 							</h5>
 						</div>
 					</div>
 					<div class="col-md-6">
 						<div class="d-flex flex-wrap align-items-center justify-content-end gap-2 mb-3">
 							<div>
-                                <button  type="button"  wire:click="displayform" class="btn btn-primary"><i class="fas fa-plus"></i> Nouvelle Commande </button>
+                                <button  type="button"  wire:click="displayform" class="btn btn-primary"><i class="fas fa-plus"></i> Nouvelle article  </button>
 
 							</div>
 						</div>
@@ -61,10 +61,10 @@
 													Libéllé
 												</th>
 												<th>
-													Total Article
+													Prix unitaire
 												</th>
 												<th>
-													Article  ajoutés
+													Catégorie
 												</th>
 
 												<th>
@@ -90,10 +90,10 @@
 													{{$value->nom}}
 												</td>
 												<td>
-                                                    {{$value->total_produit}}
+                                                    {{$value->prix}} FCFA
 												</td>
 												<td>
-													0 Produits De marque
+													{{$value->marque->nom}}
 												</td>
 
 
@@ -113,14 +113,9 @@
 											@endforelse
 										</tbody>
 									</table>
-
-
 								</div>
-
-
 							</div>
                             <div class="row g-0 align-items-center pb-3">
-
                                 <div class="col-sm-6">
                                     <div class="float-sm-end">
                                         <ul class="pagination mb-sm-0">
@@ -135,7 +130,7 @@
 					</div>
 				</div>
                 @elseif($mode == true)
-                @include('categories.form')
+                @include('articles.form')
                 @endif
 			</div>
 			<!-- container-fluid -->

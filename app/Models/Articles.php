@@ -15,14 +15,19 @@ class Articles extends Model
         'prix',
         'description',
         'slug',
-        'entreprise_id'
+        'user_id',
+        'marque_id'
     ];
 
     public function entreprise() {
         return $this->belongsTo(User::class ,'user_id');
     }
 
+    public function marque() {
+        return $this->belongsTo(Marque::class, 'marque_id');
+    }
+
     public function factures() {
-        return $this->belongsToMany(Article::class, 'article_facture','article_id','facture_id');
+        return $this->belongsToMany(Articles::class, 'article_facture','article_id','facture_id');
     }
 }
