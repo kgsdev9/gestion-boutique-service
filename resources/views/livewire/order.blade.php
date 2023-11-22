@@ -62,7 +62,7 @@
                                     </div>
 
                                     <div class="d-flex gap-2 pt-4">
-                                        <button type="button" class="btn btn-soft-primary btn-sm w-50"><i class="bx bx-user me-1"></i>Consulter </button>
+                                        <button  data-bs-toggle="modal" data-bs-target="#exampleModal"  wire:click="affichageCommande({{$facture->id}})" class="btn btn-soft-primary btn-sm w-50"><i class="bx bx-user me-1"></i>Consulter </button>
                                         <button type="button" class="btn btn-primary btn-sm w-50"><i class="bx bx-message-square-dots me-1"></i> Contact</button>
                                     </div>
 
@@ -191,9 +191,64 @@
         <!-- End Page-content -->
 
 
+        <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="orderdetailsModalLabel">Order Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p class="mb-2">Product id: <span class="text-primary">#SK2540</span></p>
+                <p class="mb-4">Billing Name: <span class="text-primary">Martin Gurley</span></p>
+
+                <div class="table-responsive">
+                    <table class="table align-middle table-nowrap">
+                        <thead>
+                            <tr>
+                            <th scope="col">Image </th>
+                            <th scope="col">Libellé</th>
+                            <th scope="col">Prix </th>
+                            <th scope="col">Marque  </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($detailOrder as $detail)
+
+                            <tr>
+                                <th scope="row">
+                                    <div>
+                                        <img src="{{Storage::url($detail->image)}}" alt="" class="rounded avatar-md">
+                                    </div>
+                                </th>
+                                <td>
+                                    <div>
+                                        <h5 class="text-truncate font-size-14">{{$detail->nom}}</h5>
+                                        <p class="text-muted mb-0">marque {{$detail->marque->nom}}</p>
+                                    </div>
+                                </td>
+                                <td>{{$detail->prix}} FCFA </td>
+                            </tr>
+                            @endforeach
 
 
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+  </div>
 
 
     </div>
 </div>
+
+
+
+
+
