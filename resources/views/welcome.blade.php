@@ -111,45 +111,6 @@
             <!-- END ROW -->
 
 
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="d-flex align-items-start">
-                                <div class="flex-grow-1">
-                                    <h5 class="card-title mb-0">Statistique de vente </h5>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <h4 class="font-size-22">3444433 FCFA </h4>
-                                </div>
-                                <div class="col-md-8">
-                                    <ul class="list-inline main-chart text-md-end mb-0">
-                                        <li class="list-inline-item chart-border-left me-0 border-0">
-                                            <h4 class="text-primary font-size-22">100024333 FCFA  <span class="text-muted d-inline-block font-size-14 align-middle ms-2">Mois en cours </span></h4>
-                                        </li>
-                                        <li class="list-inline-item chart-border-left me-0">
-                                            <h4 class="font-size-22">44445433<span class="text-muted d-inline-block font-size-14 align-middle ms-2">Dépdenses </span>
-                                            </h4>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div>
-                                <div id="sales-report" data-colors='["#1f58c7","#e6ecf9"]' class="apex-charts" dir="ltr"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-            <!-- END ROW -->
 
 
 
@@ -157,209 +118,46 @@
                 <div class="col-xl-12">
                     <div class="card">
                         <div class="card-body">
-
+                            <h5>les articles récemments ajoutés</h5>
                             <div class="table-responsive">
                                 <table class="table table-striped table-centered align-middle table-nowrap mb-0 table-check">
                                     <thead>
                                         <tr>
                                             <th style="width: 90px;">
-                                               Product
+                                              Image
                                             </th>
-                                            <th  style="width: 210px;">Product Name</th>
-                                            <th>Customer Name</th>
-                                            <th>Order ID</th>
-                                            <th>Color</th>
-                                            <th>Date</th>
+                                            <th  style="width: 210px;">Libélllé</th>
+                                            <th>Prix</th>
+                                            <th>Catégorie </th>
                                             <th>Status</th>
-                                            <th style="width: 270px;">Trend</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @foreach ($allLatestProduct as $value)
                                         <tr>
                                             <td>
                                                 <div class="avatar">
                                                     <div class="product-img avatar-title img-thumbnail bg-soft-primary border-0">
-                                                        <img src="assets/images/product/img-1.png" class="img-fluid" alt="">
+                                                        <img src="{{Storage::url($value->image)}}" class="img-fluid" alt="">
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td class="fw-semibold">Office Chair Crime</td>
+                                            <td class="fw-semibold">{{$value->nom}}</td>
                                             <td>
-                                                Neal Matthews
+                                              {{$value->prix}} FCFA
                                             </td>
                                             <td>
-                                            #526552
+                                                {{$value->marque->nom}}
                                             </td>
-                                            <td>
-                                                Gray
-                                            </td>
-                                            <td>12/01/2022</td>
+
+
                                             <td><span class="badge badge-soft-primary font-size-12">Pending</span></td>
-                                            <td>
-                                                <div id="chart-sparkline1" data-colors='["#1f58c7"]'></div>
-                                            </td>
-                                            <td>
-                                                <div class="dropdown">
-                                                    <a class="text-muted dropdown-toggle font-size-18" role="button" data-bs-toggle="dropdown" aria-haspopup="true">
-                                                        <i class="mdi mdi-dots-horizontal"></i>
-                                                    </a>
-                                                    <div class="dropdown-menu dropdown-menu-end">
-                                                        <a class="dropdown-item" href="#">Edit</a>
-                                                        <a class="dropdown-item" href="#">Print</a>
-                                                        <a class="dropdown-item" href="#">Delete</a>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
 
-                                        <tr>
                                             <td>
-                                                <div class="avatar">
-                                                    <div class="product-img avatar-title img-thumbnail bg-soft-success border-0">
-                                                        <img src="assets/images/product/img-2.png" class="img-fluid" alt="">
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="fw-semibold">Sofa Home Chair Black</td>
-                                            <td>
-                                                Connie Franco
-                                            </td>
-                                            <td>
-                                            #746648
-                                            </td>
-                                            <td>
-                                                Black
-                                            </td>
-                                            <td>14/01/2022</td>
-                                            <td><span class="badge badge-soft-success font-size-12">Active</span></td>
-                                            <td>
-                                                <div id="chart-sparkline2" data-colors='["#1f58c7"]'></div>
-                                            </td>
-                                            <td>
-                                                <div class="dropdown">
-                                                    <a class="text-muted dropdown-toggle font-size-18" role="button" data-bs-toggle="dropdown" aria-haspopup="true">
-                                                        <i class="mdi mdi-dots-horizontal"></i>
-                                                    </a>
-                                                    <div class="dropdown-menu dropdown-menu-end">
-                                                        <a class="dropdown-item" href="#">Edit</a>
-                                                        <a class="dropdown-item" href="#">Print</a>
-                                                        <a class="dropdown-item" href="#">Delete</a>
-                                                    </div>
-                                                </div>
-                                            </td>
+                                              <a href="#"><i class="mdi mdi-eye-outline font-size-18 text-muted"></i></a>
                                         </tr>
-
-                                        <tr>
-                                            <td>
-                                                <div class="avatar">
-                                                    <div class="product-img avatar-title img-thumbnail bg-soft-danger border-0">
-                                                        <img src="assets/images/product/img-3.png" class="img-fluid" alt="">
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="fw-semibold">Tuition Classes Chair</td>
-                                            <td>
-                                                Paul Reynolds
-                                            </td>
-                                            <td>
-                                            #125635
-                                            </td>
-                                            <td>
-                                                Crime
-                                            </td>
-                                            <td>17/01/2022</td>
-                                            <td><span class="badge badge-soft-success font-size-12">Active</span></td>
-                                            <td>
-                                                <div id="chart-sparkline3" data-colors='["#1f58c7"]'></div>
-                                            </td>
-                                            <td>
-                                                <div class="dropdown">
-                                                    <a class="text-muted dropdown-toggle font-size-18" role="button" data-bs-toggle="dropdown" aria-haspopup="true">
-                                                        <i class="mdi mdi-dots-horizontal"></i>
-                                                    </a>
-                                                    <div class="dropdown-menu dropdown-menu-end">
-                                                        <a class="dropdown-item" href="#">Edit</a>
-                                                        <a class="dropdown-item" href="#">Print</a>
-                                                        <a class="dropdown-item" href="#">Delete</a>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>
-                                                <div class="avatar">
-                                                    <div class="product-img avatar-title img-thumbnail bg-soft-primary border-0">
-                                                        <img src="assets/images/product/img-4.png" class="img-fluid" alt="">
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="fw-semibold">Dining Table Chair</td>
-                                            <td>
-                                                Ronald Patterson
-                                            </td>
-                                            <td>
-                                            #236521
-                                            </td>
-                                            <td>
-                                                Crime
-                                            </td>
-                                            <td>18/01/2022</td>
-                                            <td><span class="badge badge-soft-primary font-size-12">Pending</span></td>
-                                            <td>
-                                                <div id="chart-sparkline4" data-colors='["#1f58c7"]'></div>
-                                            </td>
-                                            <td>
-                                                <div class="dropdown">
-                                                    <a class="text-muted dropdown-toggle font-size-18" role="button" data-bs-toggle="dropdown" aria-haspopup="true">
-                                                        <i class="mdi mdi-dots-horizontal"></i>
-                                                    </a>
-                                                    <div class="dropdown-menu dropdown-menu-end">
-                                                        <a class="dropdown-item" href="#">Edit</a>
-                                                        <a class="dropdown-item" href="#">Print</a>
-                                                        <a class="dropdown-item" href="#">Delete</a>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>
-                                                <div class="avatar">
-                                                    <div class="product-img avatar-title img-thumbnail bg-soft-success border-0">
-                                                        <img src="assets/images/product/img-5.png" class="img-fluid" alt="">
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="fw-semibold">Home & Office Chair</td>
-                                            <td>
-                                                Adella Perez
-                                            </td>
-                                            <td>
-                                            #236521
-                                            </td>
-                                            <td>
-                                                Crime
-                                            </td>
-                                            <td>18/01/2022</td>
-                                            <td><span class="badge badge-soft-primary font-size-12">Pending</span></td>
-                                            <td>
-                                                <div id="chart-sparkline5" data-colors='["#1f58c7"]'></div>
-                                            </td>
-                                            <td>
-                                                <div class="dropdown">
-                                                    <a class="text-muted dropdown-toggle font-size-18" role="button" data-bs-toggle="dropdown" aria-haspopup="true">
-                                                        <i class="mdi mdi-dots-horizontal"></i>
-                                                    </a>
-                                                    <div class="dropdown-menu dropdown-menu-end">
-                                                        <a class="dropdown-item" href="#">Edit</a>
-                                                        <a class="dropdown-item" href="#">Print</a>
-                                                        <a class="dropdown-item" href="#">Delete</a>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                        @endforeach
 
                                     </tbody>
                                 </table>
@@ -375,7 +173,7 @@
     </div>
     <!-- End Page-content -->
 
-    
+
 </div>
 
  @endsection
