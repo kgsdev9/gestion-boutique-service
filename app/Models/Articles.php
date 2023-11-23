@@ -17,6 +17,7 @@ class Articles extends Model
         'slug',
         'user_id',
         'marque_id'
+
     ];
 
     public function entreprise() {
@@ -28,6 +29,7 @@ class Articles extends Model
     }
 
     public function factures() {
-        return $this->belongsToMany(Articles::class, 'article_facture','article_id','facture_id');
+        return $this->belongsToMany(Articles::class, 'article_facture','article_id','facture_id')
+        ->withPivot('quantity');
     }
 }

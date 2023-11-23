@@ -16,6 +16,7 @@ class Order extends Component
     public $email_client;
     public $article_id = [] ;
     public $detail = [] ;
+    public $quantity= [];
 
     protected $rules = [
         'nom_client'=> 'required',
@@ -26,7 +27,7 @@ class Order extends Component
 
 
     public function create() {
-
+        dd(Articles::find($this->article_id));
         $ressource =  Facture::create([
             'nom_client'=> $this->nom_client,
             'adresse_client'=> $this->adresse_client,
@@ -42,7 +43,7 @@ class Order extends Component
     public function affichageCommande(Facture $facture){
 
       $this->detail =$facture->articles()->get();
-   
+
         $this->dispatchBrowserEvent('showModal',[]);
 
     }

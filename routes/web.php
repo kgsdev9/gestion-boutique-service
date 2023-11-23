@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\BoutiqueController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\GestionCommande;
 use App\Http\Controllers\TestController;
@@ -68,4 +69,4 @@ Route::get('/commande/show/{id}', [TestController::class, 'show'])->name('comman
 Route::get('/annuaire-categories', CategoryController::class)->name('annuaire.categories');
 Route::get('/annuaire-article',ArticleController::class)->name('annuaire.articles');
 Route::get('/annuaire-commandes', OrderController::class)->name('annuaires.commande');
-
+Route::get('/annuaire-boutique', BoutiqueController::class)->name('annuaire.boutique');

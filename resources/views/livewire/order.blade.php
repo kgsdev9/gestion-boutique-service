@@ -168,6 +168,7 @@
                                                 <div class="col-md-3">
                                                     <label for="">{{$article->nom}} - {{$article->prix}} FCFA </label>
                                                     <input type="checkbox" wire:model="article_id" value="{{$article->id}}">
+
                                                 </div>
                                                 @endforeach
                                             </div>
