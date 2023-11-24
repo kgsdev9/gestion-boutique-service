@@ -93,7 +93,7 @@
                                                     {{$value->total_produit}}
 												</td>
 												<td>
-													0 Produits De marque
+													{{count($value->articles)}} <button class="btn btn-dark">voir</button>
 												</td>
 
 

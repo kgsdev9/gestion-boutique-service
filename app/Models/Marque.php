@@ -23,8 +23,8 @@ class Marque extends Model
     }
 
 
-    public function  products() {
-        return $this->hasMany(Product::class );
+    public function  articles() {
+        return $this->hasMany(Articles::class );
     }
 
 

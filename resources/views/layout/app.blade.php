@@ -244,10 +244,10 @@
                                     <span class="menu-item" data-key="t-ecommerce">Boutique</span>
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="#" data-key="t-products">Mes catégories </a></li>
-                                    <li><a href="#" data-key="t-product-detail">Mes Produits</a></li>
-                                    <li><a href="#" data-key="t-orders">Mes Commandes </a></li>
-                                    <li><a href="#" data-key="t-customers">Consulter ma boutique</a></li>
+                                    <li><a href="{{route('annuaire.categories')}}" data-key="t-products">Mes catégories </a></li>
+                                    <li><a href="{{route('annuaire.articles')}}" data-key="t-product-detail">Mes Produits</a></li>
+                                    <li><a href="{{route('annuaire.boutique')}}" data-key="t-customers">Consulter ma boutique</a></li>
+                                    <li><a href="{{route('annuaires.commande')}}" data-key="t-orders">Mes Commandes </a></li>
                                     <li><a href="#" data-key="t-cart">Statistique</a></li>
                                 </ul>
                             </li>

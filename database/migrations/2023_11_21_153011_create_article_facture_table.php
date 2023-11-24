@@ -17,6 +17,8 @@ return new class extends Migration
             $table->unsignedBigInteger('facture_id')->nullable();
             $table->foreign('article_id')->references('id')->on('articles')->onDelete('CASCADE')->onUpdate('CASCADE');
             $table->foreign('facture_id')->references('id')->on('factures')->onDelete('CASCADE')->onUpdate('CASCADE');
+            $table->unsignedBigInteger('quantity')->nullable();
+            $table->unsignedBigInteger('total')->nullable();
             $table->timestamps();
         });
     }

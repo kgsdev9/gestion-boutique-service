@@ -16,11 +16,6 @@ class ImpressionController extends Controller
          $this->fpdf = new Fpdf;
     }
 
-
-
-
-
-
     public function rapportCommande() {
 
         $data = Commande::orderByDesc('created_at')->get();
@@ -48,7 +43,7 @@ class ImpressionController extends Controller
     public function fpdftest()  {
          $this->fpdf->SetFont('Arial', 'B', 15);
         $this->fpdf->AddPage("L", ['200', '400']);
-        $this->fpdf->Text(10, 10, "STEPHANE GUY ");       
+        $this->fpdf->Text(10, 10, "STEPHANE GUY ");
 
         $this->fpdf->Output();
 

@@ -65,14 +65,8 @@
                                                             </div>
                                                             <div class="product-content pt-3">
                                                                 <p class="text-muted font-size-13 mb-0">Gray, Chair</p>
-                                                                <h5 class="mt-1 mb-0"><a href="#" class="text-dark font-size-16">Home &amp; Office Chair Crime</a></h5>
-                                                                <p class="text-muted mb-0">
-                                                                    <i class="bx bxs-star text-warning font-size-12"></i>
-                                                                    <i class="bx bxs-star text-warning font-size-12"></i>
-                                                                    <i class="bx bxs-star text-warning font-size-12"></i>
-                                                                    <i class="bx bxs-star text-warning font-size-12"></i>
-                                                                    <i class="bx bxs-star-half text-warning font-size-12"></i>
-                                                                </p>
+                                                                <h5 class="mt-1 mb-0"><a href="#" class="text-dark font-size-16">{{$article->nom}}</a></h5>
+                                                               
                                                                 <button  wire:click="add({{$article->id}})" class="product-buy-icon bg-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Ajouter au panier">
                                                                     <i class="mdi mdi-cart-outline text-white font-size-16"></i>
                                                                 </button>
@@ -491,110 +485,9 @@
                                                                                 <h5 class="text-white font-size-16 mb-0">02</h5>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="feed-item-list">
-                                                                            <div>
-                                                                                <h5 class="font-size-16 mb-1">Shipping Info</h5>
-                                                                                <p class="text-muted text-truncate mb-4">Neque porro quisquam est</p>
-                                                                                <div class="mb-3">
-                                                                                    <div class="row">
-                                                                                        <div class="col-lg-4 col-sm-6">
-                                                                                            <div data-bs-toggle="collapse">
-                                                                                                <label class="card-radio-label mb-0">
-                                                                                                    <input type="radio" name="address" id="info-address1" class="card-radio-input" checked="">
-                                                                                                    <div class="card-radio text-truncate p-3">
-                                                                                                        <span class="fs-14 mb-4 d-block">Address 1</span>
-                                                                                                        <span class="fs-14 mb-2 d-block">Bradley McMillian</span>
-                                                                                                        <span class="text-muted fw-normal text-wrap mb-1 d-block">109 Clarksburg Park Road Show Low, AZ 85901</span>
 
-                                                                                                        <span class="text-muted fw-normal d-block">Mo. 012-345-6789</span>
-                                                                                                    </div>
-                                                                                                </label>
-                                                                                                <div class="edit-btn bg-light  rounded">
-                                                                                                    <a href="#" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="Edit">
-                                                                                                        <i class="bx bx-pencil font-size-16"></i>
-                                                                                                    </a>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-
-                                                                                        <div class="col-lg-4 col-sm-6">
-                                                                                            <div>
-                                                                                                <label class="card-radio-label mb-0">
-                                                                                                    <input type="radio" name="address" id="info-address2" class="card-radio-input">
-                                                                                                    <div class="card-radio text-truncate p-3">
-                                                                                                        <span class="fs-14 mb-4 d-block">Address 2</span>
-                                                                                                        <span class="fs-14 mb-2 d-block">Bradley McMillian</span>
-                                                                                                        <span class="text-muted fw-normal text-wrap mb-1 d-block">109 Clarksburg Park Road Show Low, AZ 85901</span>
-                                                                                                        <span class="text-muted fw-normal d-block">Mo. 012-345-6789</span>
-                                                                                                    </div>
-                                                                                                </label>
-                                                                                                <div class="edit-btn bg-light  rounded">
-                                                                                                    <a href="#" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="Edit">
-                                                                                                        <i class="bx bx-pencil font-size-16"></i>
-                                                                                                    </a>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
                                                                     </li>
-                                                                    <li class="checkout-item pb-2">
-                                                                        <div class="avatar checkout-icon p-1">
-                                                                            <div class="avatar-title rounded-circle bg-primary">
-                                                                                <h5 class="text-white font-size-16 mb-0">03</h5>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="feed-item-list">
-                                                                            <div>
-                                                                                <h5 class="font-size-16 mb-1">Payment Info</h5>
-                                                                                <p class="text-muted text-truncate mb-4">Duis arcu tortor, suscipit eget</p>
-                                                                            </div>
-                                                                            <div>
-                                                                                <h5 class="font-size-14 mb-3">Payment method :</h5>
-                                                                                <div class="row">
-                                                                                    <div class="col-lg-3 col-sm-6">
-                                                                                        <div data-bs-toggle="collapse">
-                                                                                            <label class="card-radio-label">
-                                                                                                <input type="radio" name="pay-method" id="pay-methodoption1" class="card-radio-input">
-                                                                                                <span class="card-radio py-3 text-center text-truncate">
-                                                                                                    <i class="bx bx-credit-card d-block h2 mb-3"></i>
-                                                                                                    Credit / Debit Card
-                                                                                                </span>
-                                                                                            </label>
-                                                                                        </div>
-                                                                                    </div>
 
-                                                                                    <div class="col-lg-3 col-sm-6">
-                                                                                        <div>
-                                                                                            <label class="card-radio-label">
-                                                                                                <input type="radio" name="pay-method" id="pay-methodoption2" class="card-radio-input">
-                                                                                                <span class="card-radio py-3 text-center text-truncate">
-                                                                                                    <i class="bx bxl-paypal d-block h2 mb-3"></i>
-                                                                                                    Paypal
-                                                                                                </span>
-                                                                                            </label>
-                                                                                        </div>
-                                                                                    </div>
-
-                                                                                    <div class="col-lg-3 col-sm-6">
-                                                                                        <div>
-                                                                                            <label class="card-radio-label">
-                                                                                                <input type="radio" name="pay-method" id="pay-methodoption3" class="card-radio-input" checked="">
-
-                                                                                                <span class="card-radio py-3 text-center text-truncate">
-                                                                                                    <i class="bx bx-money d-block h2 mb-3"></i>
-                                                                                                    <span>Cash on Delivery</span>
-                                                                                                </span>
-                                                                                            </label>
-                                                                                        </div>
-                                                                                    </div>
-
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </li>
                                                                 </ol>
                                                             </div>
                                                         </div>
