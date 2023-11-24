@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Impression;
 
-use App\Http\Controllers\Controller;
-use Barryvdh\DomPDF\Facade\Pdf;
 use App\Models\Client;
+use App\Models\Facture;
 use App\Models\Commande ;
 use Codedge\Fpdf\Fpdf\Fpdf;
+use Barryvdh\DomPDF\Facade\Pdf;
+use App\Http\Controllers\Controller;
 
 class ImpressionController extends Controller
 {
@@ -24,6 +25,16 @@ class ImpressionController extends Controller
 
         ])->setOptions(['defaultFont' => 'sans-serif']);
            return $pdf->download('RapportCommande.pdf');
+
+    }
+
+    public function invoiceCommande($id) {
+
+        $order = Facture::find($id);
+        $pdf = Pdf::loadView('impression.new',  [
+            'order' =>$order
+        ])->setOptions(['defaultFont' => 'sans-serif']);
+           return $pdf->download('commande.pdf');
 
     }
 

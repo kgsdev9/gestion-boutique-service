@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Home;
 
+use view;
 use App\Models\User;
+use App\Models\Facture;
 use App\Models\Articles;
 use App\Models\Commande;
 use Illuminate\Http\Request;
@@ -28,6 +30,15 @@ class HomeController extends Controller
             'countUser' => User::orderBy('name')->count(),
             'allLatestProduct' => Articles::where('user_id', '=', Auth::user()->id)->orderByDesc('created_at')->take(13)->get()
         ]);
+    }
+
+
+    
+
+
+    public function orderDetail($id) {
+        $order = Facture::find($id);
+            return view('orders.detail', compact('order'));
     }
 
 }

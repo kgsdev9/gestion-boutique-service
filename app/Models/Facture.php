@@ -19,7 +19,7 @@ class Facture extends Model
 
     public function articles() {
         return $this->belongsToMany(Articles::class, 'article_facture', 'facture_id', 'article_id')
-                    ->withPivot('quantite', 'total');
+                    ->withPivot('quantity', 'total');
     }
 
 

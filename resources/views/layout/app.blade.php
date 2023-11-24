@@ -13,15 +13,16 @@
         <link rel="shortcut icon" href="assets/images/favicon.ico">
 
         <!-- Bootstrap Css -->
-        <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+
+        <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
         <!-- Icons Css -->
-        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="{{asset('assets/css/icons.min.css')}}">
         <!-- App Css-->
 
         <link rel="stylesheet"  id="app-style" href="{{asset('assets/css/app.min.css')}}">
         <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
         @livewireStyles
     </head>

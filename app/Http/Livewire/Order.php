@@ -15,9 +15,9 @@ class Order extends Component
     public $telephone_client;
     public $email_client;
     public $article_id = [] ;
-    public $detail = [] ;
+    public $detail  ;
     public $quantity= [];
-
+    public $informationCommande  =[] ;
     protected $rules = [
         'nom_client'=> 'required',
         'adresse_client' => 'required',
@@ -27,7 +27,7 @@ class Order extends Component
 
 
     public function create() {
-        dd(Articles::find($this->article_id));
+
         $ressource =  Facture::create([
             'nom_client'=> $this->nom_client,
             'adresse_client'=> $this->adresse_client,
@@ -41,9 +41,7 @@ class Order extends Component
     }
 
     public function affichageCommande(Facture $facture){
-
-      $this->detail =$facture->articles()->get();
-
+        $this->detail =$facture ;
         $this->dispatchBrowserEvent('showModal',[]);
 
     }
@@ -57,7 +55,8 @@ class Order extends Component
         return view('livewire.order', [
             'allArticles' => Articles::all(),
             'allFactures' => Facture::orderByDesc('created_at')->get(),
-            'detailOrder' => $this->detail
+            'detailOrder' => $this->detail,
+            'informationCommande' => $this->informationCommande
         ]);
     }
 }

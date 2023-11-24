@@ -70,3 +70,7 @@ Route::get('/annuaire-categories', CategoryController::class)->name('annuaire.ca
 Route::get('/annuaire-article',ArticleController::class)->name('annuaire.articles');
 Route::get('/annuaire-commandes', OrderController::class)->name('annuaires.commande');
 Route::get('/annuaire-boutique', BoutiqueController::class)->name('annuaire.boutique');
+Route::get('/detail-commande/{id}', [HomeController::class, 'orderDetail'])->name('detail.commnde');
+
+Route::get('/invoice-commande/{id}', [ImpressionController::class, 'invoiceCommande'])->name('invoice.commnde');
+
