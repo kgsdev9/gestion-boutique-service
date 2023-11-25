@@ -12,6 +12,8 @@ use App\Http\Controllers\Rapport\RapportController;
 use App\Http\Controllers\Commande\CommandeController;
 use App\Http\Controllers\Impression\ImpressionController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\TransactionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -71,6 +73,7 @@ Route::get('/annuaire-article',ArticleController::class)->name('annuaire.article
 Route::get('/annuaire-commandes', OrderController::class)->name('annuaires.commande');
 Route::get('/annuaire-boutique', BoutiqueController::class)->name('annuaire.boutique');
 Route::get('/detail-commande/{id}', [HomeController::class, 'orderDetail'])->name('detail.commnde');
-
 Route::get('/invoice-commande/{id}', [ImpressionController::class, 'invoiceCommande'])->name('invoice.commnde');
-
+Route::get('/annuaires-services', ServiceController::class)->name('annuaire.service');
+Route::get('/transactions', TransactionController::class)->name('annuaire.transaction.');
+Route::get('/test', [ImpressionController::class, 'invoice'])->name('invoice');

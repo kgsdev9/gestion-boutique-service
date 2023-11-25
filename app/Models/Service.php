@@ -10,15 +10,18 @@ class Service extends Model
     use HasFactory;
 
     protected $fillable =  [
-        'nom_service',
-        'slug',
+        'nom',
         'image',
-        'balance_total',
-        'balance_restante',
         'user_id'
     ];
 
     public function entreprise() {
         return $this->belongsTo(User::class ,'user_id');
+    }
+
+
+    Public function getSousService($id) {
+        return   SousService::where('service_id', '=', $id)->get();
+
     }
 }

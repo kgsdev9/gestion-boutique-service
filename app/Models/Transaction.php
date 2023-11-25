@@ -14,11 +14,16 @@ class Transaction extends Model
         'date_paiement',
         'service_id',
         'code_transaction',
-        'user_id'
+        'user_id',
+        'sub_service_id',
     ];
 
     public function service() {
         return $this->belongsTo(Service::class, 'service_id');
+    }
+
+    public function subService() {
+        return $this->belongsTo(SousService::class, 'sub_service_id');
     }
 
     public function entreprise() {

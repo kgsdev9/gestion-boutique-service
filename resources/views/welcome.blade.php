@@ -118,7 +118,6 @@
                 <div class="col-xl-12">
                     <div class="card">
                         <div class="card-body">
-                            <h5>les articles récemments ajoutés</h5>
                             <div class="table-responsive">
                                 <table class="table table-striped table-centered align-middle table-nowrap mb-0 table-check">
                                     <thead>

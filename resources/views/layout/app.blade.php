@@ -1,41 +1,31 @@
 
 <!doctype html>
 <html lang="en">
-
     <head>
 
         <meta charset="utf-8" />
-        <title>Digital Agence +</title>
+        <title>Bienvenue sur digitital agence + </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
         <meta content="Themesdesign" name="author" />
         <!-- App favicon -->
         <link rel="shortcut icon" href="assets/images/favicon.ico">
 
+        <!-- plugin css -->
+        <link href="{{asset('assets/libs/jsvectormap/css/jsvectormap.min.css')}}" rel="stylesheet" type="text/css" />
+
         <!-- Bootstrap Css -->
-
-        <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
+        <link href="{{asset('assets/css/bootstrap.min.css')}}" id="bootstrap-style" rel="stylesheet" type="text/css" />
         <!-- Icons Css -->
-        <link rel="stylesheet" href="{{asset('assets/css/icons.min.css')}}">
+        <link href="{{asset('assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
         <!-- App Css-->
-
-        <link rel="stylesheet"  id="app-style" href="{{asset('assets/css/app.min.css')}}">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
-
+        <link href="{{asset('assets/css/app.min.css')}}" id="app-style" rel="stylesheet" type="text/css" />
         @livewireStyles
     </head>
 
 
     <body style="font-family: 'Inter', sans-serif;">
-
-    <!-- <body data-layout="horizontal"> -->
-
-        <!-- Begin page -->
         <div id="layout-wrapper">
-
-
             <header id="page-topbar" class="isvertical-topbar">
                 <div class="navbar-header">
                     <div class="d-flex">
@@ -265,7 +255,13 @@
                                 </ul>
                             </li>
 
+                            <li>
+                                <a href="javascript: void(0);" >
+                                    <i class="bx bx-file icon nav-icon"></i>
+                                    <span class="menu-item" data-key="t-utility">Mes Transactions </span>
+                                </a>
 
+                            </li>
 
                             <li>
                                 <a href="javascript: void(0);" >
@@ -274,6 +270,8 @@
                                 </a>
 
                             </li>
+
+
 
                             <li>
                                 <a href="javascript: void(0);" class="has-arrow">
@@ -776,21 +774,11 @@
         </footer>
         <!-- JAVASCRIPT -->
         <script src="{{asset('assets/libs/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-        <script src="assets/libs/metismenujs/metismenujs.min.js"></script>
+        <script src="{{asset('assets/libs/metismenujs/metismenujs.min.js')}}"></script>
         <script src="{{asset('assets/libs/simplebar/simplebar.min.js')}}"></script>
         <script src="{{asset('assets/libs/eva-icons/eva.min.js')}}"></script>
-
-         <!-- apexcharts -->
-         <script src="{{asset('assets/libs/apexcharts/apexcharts.min.js')}}"> </script>
-
-        <script src="{{asset('assets/js/pages/dashboard-sales.init.js')}}"></script>
-        <script src="assets/js/pages/dashboard-sales.init.js"></script>
-
-
         <script src="{{asset('assets/js/app.js')}}"></script>
          @stack('javascript')
         @livewireScripts
-
     </body>
-
 </html>

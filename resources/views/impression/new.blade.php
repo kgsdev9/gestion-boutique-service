@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Billing Invoice - Webjourney</title>
+    <title>Facture d'achat </title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300&display=swap" rel="stylesheet">
     <style>
             * {font-family: 'Roboto', sans-serif;line-height: 26px;font-size: 15px}
@@ -51,24 +51,18 @@
 <div class="invoice-area">
     <div class="invoice-wrapper">
         <div class="invoice-header">
-            <h1 class="invoice-title" style="text-align:center;">Invoice Heder - WebJourney</h1>
+            <h1 class="invoice-title" style="text-align:center;">Facture d'achat d'article </h1>
         </div>
         <div class="invoice-details">
             <div class="invoice-details-flex">
+
                 <div class="invoice-single-details">
-                    <h2 class="invoice-details-title">Bill To:</h2>
+                    <h4 class="invoice-details-title">Information client :</h4>
                     <ul class="details-list">
-                        <li class="list">Nazmul Hoque</li>
-                        <li class="list"> <a href="#">nazmul@gmail.com </a> </li>
-                        <li class="list"> <a href="#"> 0167846483</a> </li>
-                    </ul>
-                </div>
-                <div class="invoice-single-details">
-                    <h4 class="invoice-details-title">Ship To:</h4>
-                    <ul class="details-list">
-                        <li class="list"> <strong>City: </strong> Dhaka</li>
-                        <li class="list"> <strong>Area: </strong>Dhanmondi</li>
-                        <li class="list"> <strong>Address: </strong>West Panthapath, Dhanmondi</li>
+                        <li class="list"> <strong>Nom : </strong>  {{$order->nom_client}}</li>
+                        <li class="list"> <strong>Email: </strong>{{$order->email_client}}</li>
+                        <li class="list"> <strong>Addresse: </strong>{{$order->adresse_client}}</li>
+                        <li class="list"> <strong>Télephone: </strong>{{$order->adresse_client}}</li>
                     </ul>
                 </div>
             </div>
@@ -86,65 +80,35 @@
                 </tr>
                 </thead>
                 <tbody>
+                @php
+                    $total = 0;
+                @endphp
+                @foreach ($order->articles as $ressource)
+                    @php
+                        $total+= $ressource->prix * $ressource->pivot->quantity
+                    @endphp
                 <tr>
-                    <td>House Cleaning</td>
-                    <td>$10</td>
-                    <td>3</td>
-                    <td>$30</td>
+                    <td>{{$ressource->nom}} FCFA </td>
+                    <td>{{$ressource->prix}}</td>
+                    <td>{{$ressource->pivot->quantity}}</td>
+                    <td>{{$ressource->pivot->total}} FCFA </td>
                 </tr>
-                <tr>
-                    <td>Car Cleaning</td>
-                    <td>$20</td>
-                    <td>2</td>
-                    <td>$40</td>
-                </tr>
+                @endforeach
+
+
                 <tr class="table_footer_row">
-                    <td colspan="3"><strong>Package Fee</strong></td>
-                    <td><strong>$70</strong></td>
+                    <td colspan="3"><strong>Total</strong></td>
+                    <td><strong>{{$total}} FCFA </strong></td>
                 </tr>
                 </tbody>
             </table>
         </div>
 
-        <div class="item-description">
-            <div class="table-responsive">
-                <h5 class="table-title">Orders Details</h5>
-                <table class="custom--table">
-                    <thead class="head-bg">
-                    <tr>
-                        <th>Buyer Details</th>
-                        <th>Date & Schedule</th>
-                        <th>Amount Details</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>
-                            <span class="data-span">Name:</span>Nazmul Hoque<br>
-                            <span class="data-span">Email:</span>Nazmul@gmail.com <br>
-                            <span class="data-span">Phone: </span>01678985958 <br>
-                            <span class="data-span">Address:</span>West Panthapath, Dhanmondi
-                        </td>
-                        <td>
-                            30-9-2022 <br>
-                            Fri, 10pm
-                        </td>
-                        <td>
-                            <span class="data-span"> Package Fee:</span>$70 <br>
-                            <span class="data-span"> Sub Total:</span>$70 <br>
-                            <span class="data-span"> Tax: </span>$10 <br>
-                            <span class="data-span"> Total:</span>$80 <br>
-                            <span class="data-span">Payment Status: </span>Pending
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+
 
         <footer>
             <h3 style="text-align: center">
-                Copyright @2023
+                KGS INFORMATIQUE @2023
             </h3>
         </footer>
 

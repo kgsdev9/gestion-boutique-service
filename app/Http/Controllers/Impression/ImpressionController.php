@@ -17,6 +17,19 @@ class ImpressionController extends Controller
          $this->fpdf = new Fpdf;
     }
 
+
+
+    public function invoice() {
+        $data = Commande::orderByDesc('created_at')->get();
+        $pdf = Pdf::loadView('teste.test',  [
+            'data' =>$data
+
+        ])->setOptions(['defaultFont' => 'sans-serif']);
+           return $pdf->download('RapportCommande.pdf');
+    }
+
+    
+
     public function rapportCommande() {
 
         $data = Commande::orderByDesc('created_at')->get();
@@ -33,6 +46,7 @@ class ImpressionController extends Controller
         $order = Facture::find($id);
         $pdf = Pdf::loadView('impression.new',  [
             'order' =>$order
+
         ])->setOptions(['defaultFont' => 'sans-serif']);
            return $pdf->download('commande.pdf');
 
