@@ -11,6 +11,7 @@ use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\Rapport\RapportController;
 use App\Http\Controllers\Commande\CommandeController;
 use App\Http\Controllers\Impression\ImpressionController;
+use App\Http\Controllers\Impression\RapportTransactionController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TransactionController;
@@ -77,3 +78,8 @@ Route::get('/invoice-commande/{id}', [ImpressionController::class, 'invoiceComma
 Route::get('/annuaires-services', ServiceController::class)->name('annuaire.service');
 Route::get('/transactions', TransactionController::class)->name('annuaire.transaction.');
 Route::get('/test', [ImpressionController::class, 'invoice'])->name('invoice');
+
+
+
+Route::get('/transactions-with-mountly', [RapportTransactionController::class, 'invoiceAllTransactionMounthAllService'])->name('transaction.repport.mountly');
+

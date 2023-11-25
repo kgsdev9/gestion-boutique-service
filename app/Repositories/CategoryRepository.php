@@ -5,7 +5,6 @@ use App\Models\Marque;
 
 class CategoryRepository    {
 
-
     protected $category  ;
 
     public function __construct(Marque $category)
@@ -16,7 +15,7 @@ class CategoryRepository    {
     public function all() {
         return $this->category->all();
     }
-    
+
 
 
 }

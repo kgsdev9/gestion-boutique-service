@@ -50,10 +50,16 @@ class Transaction extends Component
 
     public function render()
     {
+
+
         return view('livewire.transaction', [
             'allServices' => Service::all(),
             'allSubService' => $this->sousService,
-            'allTransactions'=> ModelsTransaction::orderByDesc('created_at')->get()
+            'allTransactions'=>  ModelsTransaction::
+                                   whereYear('created_at', '=' ,date('Y'))
+                                  ->orderByDesc('created_at')
+                                  ->get()
+
         ]);
     }
 

@@ -19,10 +19,6 @@ class CommandeController extends Controller
         $this->middleware('auth');
     }
 
-
-
-
-
     /**
      * Display a listing of the resource.
      */
@@ -95,7 +91,7 @@ return redirect()->route('gestion.commande', ['sucess'=> true]);
      */
     public function show(int  $id)
     {
-        
+
         $orders = Commande::find($id);
         return view('commandes.detail', compact('orders'));
     }

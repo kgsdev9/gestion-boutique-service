@@ -2,12 +2,10 @@
     <div class="main-content">
         <div class="page-content">
             <div class="container-fluid">
-
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="card">
                             <div class="card-body">
-
                                 <div class="">
                                     <div class="row mb-2">
                                         <div class="col-xl-3 col-md-12">
@@ -47,7 +45,8 @@
                                             </td>
                                             <td>
                                                 <p class="mb-0">
-                                                    <i class="mdi mdi-comment-outline align-middle font-size-16 me-1"></i> 7
+                                                    <i class="mdi mdi-comment-outline align-middle font-size-16 me-1"></i> {{$service->allTransactionWithSingleService($service->id)}}  Total Transaction
+                                                    <a href=""><i class="mdi mdi-eye-outline font-size-18 text-muted"></i></a>
                                                 </p>
                                             </td>
                                             <td>

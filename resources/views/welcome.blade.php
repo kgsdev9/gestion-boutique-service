@@ -11,16 +11,10 @@
                         <div class="card-body">
                             <div class="d-flex justify-content-between">
                                 <div>
-                                    <h6 class="font-size-15">Total Commande </h6>
+                                    <h6 class="font-size-15">Bilan des services  </h6>
                                     <h4 class="mt-3 pt-1 mb-0 font-size-22">1234  </h4>
                                 </div>
-                                <div class="">
-                                    <div class="avatar">
-                                        <div class="avatar-title rounded bg-soft-primary">
-                                            <i class="bx bx-store-alt font-size-24 mb-0 text-primary"></i>
-                                        </div>
-                                    </div>
-                                </div>
+
                             </div>
                         </div>
                         <div class="icon text-center">
@@ -61,22 +55,16 @@
                         <div class="card-body">
                             <div class="d-flex justify-content-between">
                                 <div>
-                                    <h6 class="mb-0 font-size-15">Bilan Service </h6>
-                                    <h4 class="mt-3 mb-0 font-size-22">144554 FCFA</h4>
+                                    <h6 class="mb-0 font-size-15">Bilan tous les services du mois</h6>
+                                    <h4 class="mt-3 mb-0 font-size-22">{{$allTransactionSommeWithMounth}} FCFA </h4>
                                     </div>
 
-                                <div class="">
-                                    <div class="avatar">
-                                        <div class="avatar-title rounded bg-soft-primary">
-                                            <i class="bx bx-revision font-size-24 mb-0 text-primary"></i>
-                                        </div>
-                                    </div>
-                                </div>
+
                             </div>
                         </div>
                         <div>
                             <div class="icon text-center">
-                                <a href="#" class="btn btn-outline dark">Consulter la liste  <i class="fas fa-arrow-circle-right"></i></a>
+                                <a href="{{route('transaction.repport.mountly')}}" class="btn btn-outline dark">Consulter la liste  <i class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                     </div>

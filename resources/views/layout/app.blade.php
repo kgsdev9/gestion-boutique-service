@@ -249,9 +249,8 @@
                                     <span class="menu-item" data-key="t-contacts">Mes Services</span>
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="#" data-key="t-user-grid">Services </a></li>
+                                    <li><a href="{{route('annuaire.service')}}" data-key="t-user-grid">Services </a></li>
                                     <li><a href="#" data-key="t-user-list">Rapport</a></li>
-
                                 </ul>
                             </li>
 
