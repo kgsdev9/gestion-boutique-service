@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\BonCommandeController;
 use App\Http\Controllers\BoutiqueController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\GestionCommande;
@@ -10,11 +11,13 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\Home\HomeController;
 use App\Http\Controllers\Rapport\RapportController;
 use App\Http\Controllers\Commande\CommandeController;
+use App\Http\Controllers\FactureController;
 use App\Http\Controllers\Impression\ImpressionController;
 use App\Http\Controllers\Impression\RapportTransactionController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TransactionController;
+use App\Http\Livewire\DetailFacture;
 
 /*
 |--------------------------------------------------------------------------
@@ -73,13 +76,11 @@ Route::get('/annuaire-categories', CategoryController::class)->name('annuaire.ca
 Route::get('/annuaire-article',ArticleController::class)->name('annuaire.articles');
 Route::get('/annuaire-commandes', OrderController::class)->name('annuaires.commande');
 Route::get('/annuaire-boutique', BoutiqueController::class)->name('annuaire.boutique');
-Route::get('/detail-commande/{id}', [HomeController::class, 'orderDetail'])->name('detail.commnde');
 Route::get('/invoice-commande/{id}', [ImpressionController::class, 'invoiceCommande'])->name('invoice.commnde');
 Route::get('/annuaires-services', ServiceController::class)->name('annuaire.service');
 Route::get('/transactions', TransactionController::class)->name('annuaire.transaction.');
 Route::get('/test', [ImpressionController::class, 'invoice'])->name('invoice');
-
-
-
 Route::get('/transactions-with-mountly', [RapportTransactionController::class, 'invoiceAllTransactionMounthAllService'])->name('transaction.repport.mountly');
+Route::get('/single-invoice-service/{id}', [RapportTransactionController::class, 'invoceTransaction'])->name('single.transaction.invoice');
+Route::get('annuaire-bon-de-commande', BonCommandeController::class)->name('annuaire.bon.de.commande');
 

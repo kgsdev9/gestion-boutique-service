@@ -23,8 +23,7 @@
         @livewireStyles
     </head>
 
-
-    <body style="font-family: 'Inter', sans-serif;">
+    <body>
         <div id="layout-wrapper">
             <header id="page-topbar" class="isvertical-topbar">
                 <div class="navbar-header">
@@ -255,11 +254,19 @@
                             </li>
 
                             <li>
-                                <a href="javascript: void(0);" >
+                                <a href="{{route('annuaire.transaction.')}}" >
                                     <i class="bx bx-file icon nav-icon"></i>
                                     <span class="menu-item" data-key="t-utility">Mes Transactions </span>
                                 </a>
 
+                            </li>
+
+                            <li>
+                                <a href="apps-chat.html">
+                                    <i class="bx bx-chat icon nav-icon"></i>
+                                    <span class="menu-item" data-key="t-chat">Bon de commande </span>
+                                    <span class="badge rounded-pill bg-danger" data-key="t-hot">Hot</span>
+                                </a>
                             </li>
 
                             <li>

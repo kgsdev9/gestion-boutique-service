@@ -3,6 +3,7 @@ namespace App\Repositories ;
 
 
 use App\Models\Transaction;
+use Illuminate\Support\Facades\DB;
 
 class RapportTransactionRepository   {
 
@@ -36,6 +37,12 @@ class RapportTransactionRepository   {
         ->join('factures', 'articles.id', '=', 'article_facture.id')
         ->get();
         dd($users);
+    }
+
+
+    public function singleInvoiceTransaction($id) {
+        return $this->transaction->where('id', '=', $id)
+                    ->first();
     }
 
 

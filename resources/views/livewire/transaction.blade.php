@@ -37,9 +37,9 @@
                                             <i class="bx bx-dots-horizontal text-muted font-size-20"></i>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-end">
-                                            <a class="dropdown-item" href="#">Edit</a>
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Remove</a>
+
+                                            <button class="dropdown-item" wire:click="delete({{$transaction}})">Supprimer</button>
+                                            <button  wire:click="duplacateTransaction({{$transaction}})" class="dropdown-item" href="#">Dupliquer</button>
                                         </div>
                                     </div>
                                     <div class="d-flex align-items-center">
@@ -63,7 +63,7 @@
 
                                     <div class="d-flex gap-2 pt-4">
 
-                                        <button type="button" class="btn btn-warning btn-sm w-50"> <i class="bx bx-download"></i>  Imprimer</button>
+                                        <a href="{{route('single.transaction.invoice', $transaction->id)}}" class="btn btn-warning btn-sm w-50"> <i class="bx bx-download"></i>  Imprimer</a>
                                     </div>
 
 
@@ -88,27 +88,7 @@
                         <div class="col-sm-6">
                             <div class="float-sm-end">
                                 <ul class="pagination mb-sm-0">
-                                    <li class="page-item disabled">
-                                        <a href="#" class="page-link"><i class="mdi mdi-chevron-left"></i></a>
-                                    </li>
-                                    <li class="page-item active">
-                                        <a href="#" class="page-link">1</a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a href="#" class="page-link">2</a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a href="#" class="page-link">3</a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a href="#" class="page-link">4</a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a href="#" class="page-link">5</a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a href="#" class="page-link"><i class="mdi mdi-chevron-right"></i></a>
-                                    </li>
+                                 {{$allTransactions->links()}}
                                 </ul>
                             </div>
                         </div>

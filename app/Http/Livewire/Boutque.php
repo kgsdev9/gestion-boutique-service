@@ -73,7 +73,8 @@ class Boutque extends Component
                ]);
          };
          session()->forget('cart');
-        
+         $this->reset();
+
     }
 
 

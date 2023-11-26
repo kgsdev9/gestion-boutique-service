@@ -19,4 +19,9 @@ class RapportTransactionService   {
         return $this->rapportTransactionRepository->getRapportTransactionWithMountly();
     }
 
+    public function singleInvoiceTransaction($id) {
+        return $this->rapportTransactionRepository->singleInvoiceTransaction($id);
+    }
+
+
 }

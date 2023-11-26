@@ -7,6 +7,7 @@
   <style>
     body {
       font-family: 'Arial', sans-serif;
+      background-color: #f5f5f5;
       margin: 0;
       padding: 0;
     }
@@ -68,50 +69,42 @@
 
   <div class="invoice-container">
     <div class="invoice-header">
-      <h1>Facture De Commande </h1>
+      <h1>Service Invoice</h1>
     </div>
 
     <div class="invoice-details">
       <p><strong>Invoice Number:</strong> INV-2023-001</p>
-      <p><strong>Date:</strong> {{$order->created_at}}</p>
-      <p><strong>Client:</strong> {{$order->nom_client}}</p>
-      <p><strong>Télephone:</strong>{{$order->telephone_client}}</p>
-      <p><strong>Email:</strong>{{$order->email_client}}</p>
+      <p><strong>Date:</strong> November 25, 2023</p>
+      <p><strong>Customer:</strong> John Doe</p>
+      <p><strong>Email:</strong> john.doe@example.com</p>
     </div>
 
     <table class="invoice-items">
       <thead>
         <tr>
-          <th>Article</th>
-          <th>Quantite</th>
-          <th>Prix</th>
+          <th>Description</th>
+          <th>Quantity</th>
+          <th>Unit Price</th>
           <th>Total</th>
         </tr>
       </thead>
       <tbody>
-        @php
-        $total = 0;
-        @endphp
-        @foreach ($order->articles as $ressource)
-        @php
-        $total+= $ressource->prix * $ressource->pivot->quantity
-        @endphp
         <tr>
-          <td>{{$ressource->nom}}</td>
-          <td>{{$ressource->pivot->quantity}}</td>
-          <td>{{$ressource->prix}} FCFA</td>
-          <td>{{$ressource->pivot->total}} FCFA</td>
+          <td>Service ABC</td>
+          <td>2</td>
+          <td>$50.00</td>
+          <td>$100.00</td>
         </tr>
-       @endforeach
+        <!-- Add more rows for additional services -->
       </tbody>
     </table>
 
     <div class="invoice-total">
-      <p><strong>Total:</strong>{{$total}} FCFA </p>
+      <p><strong>Total Amount:</strong> $100.00</p>
     </div>
 
     <div class="thank-you">
-      <p>Merci pour la commande KGS !</p>
+      <p>Thank you for your business!</p>
     </div>
   </div>
 

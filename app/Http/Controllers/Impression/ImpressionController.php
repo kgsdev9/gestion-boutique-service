@@ -28,10 +28,9 @@ class ImpressionController extends Controller
            return $pdf->download('RapportCommande.pdf');
     }
 
-    
+
 
     public function rapportCommande() {
-
         $data = Commande::orderByDesc('created_at')->get();
         $pdf = Pdf::loadView('impression.rapportcommande',  [
             'data' =>$data

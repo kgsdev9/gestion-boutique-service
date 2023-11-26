@@ -265,7 +265,7 @@
                                                         <div class="card checkout-order-summary">
                                                             <div class="card-body">
                                                                 <div class="p-3 bg-light mb-3">
-                                                                    <h5 class="font-size-16 mb-0">Order Summary <span class="float-end ms-2">#MN0124</span></h5>
+                                                                    <h5 class="font-size-16 mb-0">Sommaire commande</h5>
                                                                 </div>
                                                                 <div class="table-responsive">
                                                                     <table class="table align-middle mb-0 table-nowrap">
@@ -277,64 +277,29 @@
                                                                             </tr>
                                                                         </thead>
                                                                         <tbody>
+                                                                            @php $total = 0 @endphp
+                                                                            @foreach( (array)session('cart') as $id => $details)
+                                                                            @php $total += $details['price'] * $details['quantity'] @endphp
                                                                             <tr>
-                                                                                <th scope="row"><img src="assets/images/product/img-1.png" alt="product-img" title="product-img" class="avatar-md"></th>
+                                                                                <th scope="row"><img src="{{Storage::url($details['image'])}}" alt="product-img" title="product-img" class="avatar-md"></th>
                                                                                 <td>
-                                                                                    <h5 class="font-size-15 text-truncate"><a href="ecommerce-product-detail.html" class="text-dark">Home &amp; Office Chair Crime</a></h5>
-                                                                                    <p class="text-muted mb-0">$ 260 x 2</p>
+                                                                                    <h5 class="font-size-15 text-truncate"><a href="ecommerce-product-detail.html" class="text-dark">{{ $details['name']}}</a></h5>
+                                                                                    <p class="text-muted mb-0">Prix{{$details['price']}} </p>
+                                                                                    <p class="text-muted mb-0"> Quantite {{ $details['quantity']}} </p>
                                                                                 </td>
-                                                                                <td>$ 520</td>
+                                                                                <td> {{ $details['price'] * $details['quantity'] }} FCFA </td>
                                                                             </tr>
-                                                                            <tr>
-                                                                                <th scope="row"><img src="assets/images/product/img-2.png" alt="product-img" title="product-img" class="avatar-md"></th>
-                                                                                <td>
-                                                                                    <h5 class="font-size-15 text-truncate"><a href="ecommerce-product-detail.html" class="text-dark">Sofa Home Chair Black</a></h5>
-                                                                                    <p class="text-muted mb-0">$ 260 x 1</p>
-                                                                                </td>
-                                                                                <td>$ 260</td>
-                                                                            </tr>
+                                                                            @endforeach
                                                                             <tr>
                                                                                 <td colspan="2">
-                                                                                    <h5 class="font-size-14 m-0">Sub Total :</h5>
+                                                                                    <h5 class="font-size-14 m-0">Total :</h5>
                                                                                 </td>
                                                                                 <td>
-                                                                                    $ 780
-                                                                                </td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td colspan="2">
-                                                                                    <h5 class="font-size-14 m-0">Discount :</h5>
-                                                                                </td>
-                                                                                <td>
-                                                                                    - $ 78
+                                                                                {{$total}}
                                                                                 </td>
                                                                             </tr>
 
-                                                                            <tr>
-                                                                                <td colspan="2">
-                                                                                    <h5 class="font-size-14 m-0">Shipping Charge :</h5>
-                                                                                </td>
-                                                                                <td>
-                                                                                    $ 25
-                                                                                </td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td colspan="2">
-                                                                                    <h5 class="font-size-14 m-0">Estimated Tax :</h5>
-                                                                                </td>
-                                                                                <td>
-                                                                                    $ 18.20
-                                                                                </td>
-                                                                            </tr>
 
-                                                                            <tr class="bg-light">
-                                                                                <td colspan="2">
-                                                                                    <h5 class="font-size-14 m-0">Total:</h5>
-                                                                                </td>
-                                                                                <td>
-                                                                                    $ 745.2
-                                                                                </td>
-                                                                            </tr>
                                                                         </tbody>
                                                                     </table>
 

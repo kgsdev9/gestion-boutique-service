@@ -2,8 +2,9 @@
 namespace App\Repositories ;
 
 use App\Models\Articles;
+use Illuminate\Support\Facades\DB;
 
-class StatisitiqueProductRepository  {
+class StatisitiqueArticleRepository  {
 
     protected $article ;
 
@@ -13,8 +14,11 @@ class StatisitiqueProductRepository  {
     }
 
     public function getSumArticleOrdering() {
-        
 
+        return  DB::table('article_facture')
+        ->whereMonth('created_at', now()->month)
+        ->whereYear('created_at', now()->year)
+        ->sum('total');
     }
 
 

@@ -25,4 +25,11 @@ class RapportTransactionController extends Controller
     }
 
 
+    public function invoceTransaction($id) {
+        $pdf = Pdf::loadView('impression.transactions.transaction',  [
+            'singleFacture'=> $this->rapportTransactionService->singleInvoiceTransaction($id)
+        ])->setOptions(['defaultFont' => 'sans-serif']);
+           return $pdf->download('service.pdf');
+    }
+
 }

@@ -6,14 +6,19 @@ use App\Models\Service;
 use App\Models\SousService;
 use App\Models\Transaction as ModelsTransaction;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class Transaction extends Component
 {
+
+    use WithPagination;
+    protected $paginationTheme = 'bootstrap';
     public $service ;
     public $sousService  = []  ;
     public $montant_entrant;
     public $codeTransaction = 0;
     public $sub_service_id ;
+    public $transactionId ;
 
 
     protected $rules = [
@@ -48,6 +53,26 @@ class Transaction extends Component
     }
 
 
+    public function delete(ModelsTransaction $transaction) {
+        $transaction->delete();
+        $this->reset();
+    }
+
+
+
+    public function duplacateTransaction(ModelsTransaction $transaction) {
+
+
+        ModelsTransaction::create([
+            'montant_entrant'=> $transaction->montant_entrant,
+            'sub_service_id' => $transaction->sub_service_id,
+            'service_id' => $transaction->service_id,
+            'code_transaction' => $this->codeTransaction,
+        ]);
+        $this->reset();
+    }
+
+
     public function render()
     {
 
@@ -58,8 +83,7 @@ class Transaction extends Component
             'allTransactions'=>  ModelsTransaction::
                                    whereYear('created_at', '=' ,date('Y'))
                                   ->orderByDesc('created_at')
-                                  ->get()
-
+                                  ->paginate(12)
         ]);
     }
 
