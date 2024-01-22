@@ -60,18 +60,7 @@ Route::get('/send-rapport', [RapportController::class, 'generate'])->name('send.
 Route::get('/print-test', [ImpressionController::class, 'fpdftest'])->name('print.html');
 
 
-
-Route::get('/test-jsper', [TestController::class, 'index'])->name('test.index');
-
-Route::get('/detail/test', [TestController::class, 'detail_commande']);
-
-
-Route::get('/commande/show/{id}', [TestController::class, 'show'])->name('commande.test');
-
-
 //mes nouvelles routes
-
-
 Route::get('/annuaire-categories', CategoryController::class)->name('annuaire.categories');
 Route::get('/annuaire-article',ArticleController::class)->name('annuaire.articles');
 Route::get('/annuaire-commandes', OrderController::class)->name('annuaires.commande');

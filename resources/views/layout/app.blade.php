@@ -262,7 +262,7 @@
                             </li>
 
                             <li>
-                                <a href="apps-chat.html">
+                                <a href="{{route('annuaire.bon.de.commande')}}">
                                     <i class="bx bx-chat icon nav-icon"></i>
                                     <span class="menu-item" data-key="t-chat">Bon de commande </span>
                                     <span class="badge rounded-pill bg-danger" data-key="t-hot">Hot</span>

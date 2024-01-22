@@ -94,7 +94,7 @@ class BonDeCommande extends Component
     public function render()
     {
         return view('livewire.bon-de-commande', [
-            'allCommandes'=> $this->allCommande
+            'allCommandes'=> ModelsBonDeCommande::all()
         ]);
     }
 }

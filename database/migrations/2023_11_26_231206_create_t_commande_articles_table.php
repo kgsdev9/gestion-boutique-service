@@ -16,6 +16,9 @@ return new class extends Migration
             $table->integer('quantite');
             $table->integer('prix');
             $table->string('total');
+            $table->string('designation');
+            $table->unsignedBigInteger('bon_de_commande_id')->nullable();
+            $table->foreign('bon_de_commande_id')->references('id')->on('bon_de_commandes')->onDelete('CASCADE')->onUpdate('CASCADE');
             $table->timestamps();
         });
     }

@@ -39,7 +39,7 @@ trait ArticleService
     }
 
     public function allCategorie() {
-        return Marque::orderBy('name')->get();
+        return Marque::orderBy('nom')->get();
     }
 
     protected function rules()

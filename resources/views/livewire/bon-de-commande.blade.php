@@ -1,9 +1,7 @@
 <div>
 
 <div>
-
     <div class="main-content">
-
         <div class="page-content">
             <div class="container-fluid">
 
@@ -219,15 +217,11 @@
                                           </td>
 
                                           <td>
-                                           {{$commande->client->nom}}   {{$commande->client->prenom}}
+                                           {{$commande->nom_client}}   {{$commande->prenom_client}}
                                           </td>
 
                                           <td>
-                                            {{$commande->client->adresse}}
-                                          </td>
-
-                                          <td>
-                                            {{$commande->artisan->name}} {{$commande->artisan->prenom}}
+                                            {{$commande->email_client}}
                                           </td>
                                         <td>
                                             <div class="row">
